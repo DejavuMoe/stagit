@@ -4,6 +4,15 @@ body {
 	font-family: monospace;
 }
 
+/* Fixes incorrect iOS font sizing due to flexbox */
+/* Ref: https://github.com/jpe90/stagit/commit/f7cca176b6ccf436f498cf4876b4d60553d92aa2 */
+code {
+	text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-size: 1em;
 	margin: 0;
@@ -85,6 +94,11 @@ pre {
 
 pre a.h {
 	color: #00a;
+}
+
+pre#blob a.line {
+	text-align:right;
+	user-select: none;
 }
 
 .A,
